@@ -23,5 +23,6 @@ export function leastCaloricFoods(numOfFoods,foodList) {
 } 
 
 export function formatFoodList(foodList) {
-    return foodList
+    const formattedFoodList = foodList.map((food) => food.food)
+    return formattedFoodList
 }
