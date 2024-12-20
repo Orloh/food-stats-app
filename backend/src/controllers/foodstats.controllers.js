@@ -20,6 +20,7 @@ export class FoodstatsController {
     static async fetchFoodData(req, res) {
         const { food } = req.body;
 
+        // check if there is a food in the request
         if (!food) {
             return res.status(400).json({
                 error: "Food input is required"
