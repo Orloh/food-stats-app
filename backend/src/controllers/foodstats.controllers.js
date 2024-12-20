@@ -1,4 +1,5 @@
 import { FoodstatsModel } from "../model/foodstats.model.js";
+import { leastCaloricFoods, formatFoodList } from "../utils/foodstats.utils.js"
 
 export class FoodstatsController {
     static async test(req, res) {
@@ -27,19 +28,19 @@ export class FoodstatsController {
         
         try {
             // fetch food data from model
-            const foodData = await FoodstatsModel.fethcFoods(food);
+            const foodData = await FoodstatsModel.fetchFoods(food);
 
-            // sort data by calories and pick the 3 least caloric
-            // TODO
+            // get the 3 least caloric foods form the list
+            const leastCaloricFoodList = leastCaloricFoods(3, foodData);
 
-            // format respons
-            const formattedResponse = foodData
+            // format response
+            const formattedResponse = formatFoodList(leastCaloricFoodList);
 
             // return response
-            console.log(formattedResponse)
             res.status(200).send(formattedResponse);
 
         } catch (error) {
+            console.log(error)
             res.status(500).json({error: error.message});
         }
     }

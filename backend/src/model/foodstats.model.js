@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export class FoodstatsModel {
-    static async fethcFoods(food){
+    static async fetchFoods(food){
         const appId = process.env.EDAMAM_APP_ID;
         const appKey = process.env.EDAMAM_APP_KEY;
         const apiAccess = process.env.EDAMAM_ACCESS_POINT
