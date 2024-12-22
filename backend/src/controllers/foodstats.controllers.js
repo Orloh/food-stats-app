@@ -18,7 +18,7 @@ export class FoodstatsController {
     }
 
     static async fetchFoodData(req, res) {
-        const { food } = req.body;
+        const food  = req.query.food;
 
         // check if there is a food in the request
         if (!food) {

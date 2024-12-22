@@ -26,6 +26,6 @@ export function leastCaloricFoods(numOfFoods,foodList) {
 
 // format a list of food objects by extracting their food property.
 export function formatFoodList(foodList) {
-    const formattedFoodList = foodList.map((food) => food.food)
+    const formattedFoodList = {data: foodList.map((food) => food.food)}
     return formattedFoodList
 }
