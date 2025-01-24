@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchForm from "../components/SearchForm";
 import { getFoodData } from "../services/foodService";
+import FoodsReel from "../components/FoodReel";
 
 const HomePage = () => {
     const [foodsData, setFoodsData] = useState([]);
@@ -14,13 +15,24 @@ const HomePage = () => {
         } catch (error) {
             setError(error.message);
         }
+        console.log(foodsData);
     };
+
+    useEffect(() => {
+        // This will run after every render where foodsData changes
+        console.log("Updated foodsData:", foodsData); 
+      }, [foodsData]);
 
     return (
         <div>
-            <h1>Food Calorie App Header</h1>
-            <SearchForm onSearch={handleSearch} />
-            <h4>Food Cards</h4>
+            <h1>Food Calorie App</h1>
+            <div>
+                <SearchForm onSearch={handleSearch} />
+            </div>
+            {error && <div style={{color: 'red'}}>{error}</div>}
+            <div>
+                <FoodsReel foods={foodsData} />
+            </div>
         </div>
     )
 }

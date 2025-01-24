@@ -1,0 +1,5 @@
+.search-form-container { /* O el nombre de la clase de tu contenedor */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    /* align-items: center;  Si también quieres centrar verticalmente */
+  }

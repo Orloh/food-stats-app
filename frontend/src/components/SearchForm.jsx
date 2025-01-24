@@ -10,7 +10,6 @@ const SearchForm = ({ onSearch }) => {
 
     return(
         <form onSubmit={handleSubmit}>
-            <h3>Search From</h3>
             <input
                 type="text"
                 value={foodQuery}

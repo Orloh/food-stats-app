@@ -1,0 +1,6 @@
+body {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
+  }
