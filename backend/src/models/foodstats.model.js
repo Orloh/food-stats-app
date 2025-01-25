@@ -24,13 +24,13 @@ export class FoodstatsModel {
         try {
             //Read the data from the JSON database
             const existingData = await database.read();
-            console.log(existingData);
             
             //Append the new data
-            existingData[food] =
+            const timestamp = new Date().toISOString();
+            existingData[timestamp] =
                 {
+                    query: food,
                     foodList,
-                    timestamp: new Date().toISOString()
                 };
 
             //Write the data back to the JSON database
