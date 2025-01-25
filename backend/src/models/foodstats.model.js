@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { JsonDatabase } from "../models/database.model.js";
-
 
 export class FoodstatsModel {
     // fetch food data from the API

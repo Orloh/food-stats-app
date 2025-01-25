@@ -1,7 +1,6 @@
 import { JsonDatabase } from "../models/database.model.js";
 import { FoodstatsModel } from "../models/foodstats.model.js";
 import { leastCaloricFoods, formatFoodList } from "../utils/foodstats.utils.js"
-
 export class FoodstatsController {
     static async test(req, res) {
         try {
@@ -20,6 +19,7 @@ export class FoodstatsController {
 
     static async fetchFoodData(req, res) {
         const food  = req.query.food;
+        const databasePath = process.env.JSON_DB_PATH;
 
         // check if there is a food in the request
         if (!food) {
@@ -36,7 +36,7 @@ export class FoodstatsController {
             const leastCaloricFoodList = leastCaloricFoods(3, foodData);
 
             // instatntiate FoodstatsModel to create a database
-            const foodSearDatabase = new JsonDatabase("./data/foodstats-db.json");
+            const foodSearDatabase = new JsonDatabase(databasePath);
             foodSearDatabase.initialize();
 
             // save the food data to the database
