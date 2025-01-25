@@ -1,4 +1,5 @@
-import { FoodstatsModel } from "../model/foodstats.model.js";
+import { JsonDatabase } from "../models/database.model.js";
+import { FoodstatsModel } from "../models/foodstats.model.js";
 import { leastCaloricFoods, formatFoodList } from "../utils/foodstats.utils.js"
 
 export class FoodstatsController {
@@ -33,6 +34,13 @@ export class FoodstatsController {
 
             // get the 3 least caloric foods form the list
             const leastCaloricFoodList = leastCaloricFoods(3, foodData);
+
+            // instatntiate FoodstatsModel to create a database
+            const foodSearDatabase = new JsonDatabase("./data/foodstats-db.json");
+            foodSearDatabase.initialize();
+
+            // save the food data to the database
+            await FoodstatsModel.saveFoodData(food, leastCaloricFoodList, foodSearDatabase);
 
             // format response
             const formattedResponse = formatFoodList(leastCaloricFoodList);
