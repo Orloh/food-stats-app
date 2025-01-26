@@ -1,9 +1,9 @@
 import cors from 'cors';
 import express from 'express';
 import foodstatsRoutes from './routes/foodstats.routes.js';
-process.loadEnvFile('./src/.env');
+process.loadEnvFile('./.env');
 
-const PORT = 3333;
+const PORT = process.env.PORT || 3333;
 
 const app = express();
 
