@@ -22,6 +22,22 @@ Before you begin, ensure you have met the following requirements:
 
 ## Getting Started
 
+### Installation
+To get started with the Food Stats App, follow these steps:
+
+1. Clone the repository:
+```sh
+git clone https://github.com/Orloh/food-stats-app.git
+```
+2. Navigate to the project directory:
+```
+cd food-stats-app
+```
+3. Install the dependencies:
+```sh
+npm install
+```
+
 ### Environment Setup
 Create two `.env` files, one for the frontend and one for the backend.
 
@@ -46,23 +62,7 @@ JSON_DB_PATH="data/food-database.json"
 - `EDAMAM_ACCESS_POINT`: This is the base URL for the Edamam API.
 - `JSON_DB_PATH`: This variable defines the path to the JSON file where food data will be stored.
 
-**NOTE:** You can use the `.env.example` files, located in both the frontend and backend directories, to create the `.env` files. 
-
-### Installation
-To get started with the Food Stats App, follow these steps:
-
-1. Clone the repository:
-```sh
-git clone https://github.com/Orloh/food-stats-app.git
-```
-2. Navigate to the project directory:
-```
-cd food-stats-app
-```
-3. Install the dependencies:
-```sh
-npm install
-```
+**NOTE:** You can use the `.env.example` files, located in both the frontend and backend directories, to create the `.env` files.
 
 ### Running the Application
 1. Start both the backend and frontend servers concurrently:
